@@ -17,7 +17,10 @@ class PushService extends GetxService {
 
   Future init(onInit) async {
     tz.initializeTimeZones();
-
+    flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>()
+        ?.requestNotificationsPermission();
     AndroidInitializationSettings initializationSettingsAndroid =
         const AndroidInitializationSettings("@mipmap/launcher_icon");
     final DarwinInitializationSettings initializationSettingsDarwin =
