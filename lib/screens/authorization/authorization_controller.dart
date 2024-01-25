@@ -4,9 +4,25 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:notification_app/screens/home/home_screen.dart';
 
+import 'dart:async';
+import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:intl/intl.dart';
+import 'package:notification_app/screens/home/home_screen.dart';
+
 class AuthorizationController extends GetxController
     with WidgetsBindingObserver {
-  final FocusNode focusNode = FocusNode();
+  // final FocusNode focusNode = FocusNode();
+  final fieldOneController = TextEditingController();
+  final fieldTwoController = TextEditingController();
+  final fieldThreeController = TextEditingController();
+  final fieldFourController = TextEditingController();
+
+  final FocusNode fieldOneFocusNode = FocusNode();
+  final FocusNode fieldTwoFocusNode = FocusNode();
+  final FocusNode fieldThreeFocusNode = FocusNode();
+  final FocusNode fieldFourFocusNode = FocusNode();
+
   RxBool isKeyboardOpen = false.obs;
 
   final formKey = GlobalKey<FormState>();
@@ -14,14 +30,9 @@ class AuthorizationController extends GetxController
   RxString timeString = "12:59".obs;
   RxBool isErrorMessage = false.obs;
 
-  final fieldOneController = TextEditingController();
-  final fieldTwoController = TextEditingController();
-  final fieldThreeController = TextEditingController();
-  final fieldFourController = TextEditingController();
-
   RxBool isConfirm = false.obs;
 
-  List<String?> passwordList = List.filled(4, '');
+  List<String?> passwordList = List.filled(4, '\u200b');
 
   @override
   void onInit() {
@@ -61,10 +72,18 @@ class AuthorizationController extends GetxController
     return DateFormat('HH:mm').format(dateTime);
   }
 
-  void nextField({required String value, required int position}) {
-    if (value.length == 1) {
+  void nextField(
+      {required String value,
+      required int position,
+      required FocusNode focusNode}) {
+    if (value.isNotEmpty && position < 3) {
       passwordList[position] = value;
       focusNode.nextFocus();
+    } else if (value.isEmpty && position > 0) {
+      // print("previousFocus");
+      // Если поле пустое и не является первым полем, переходите к предыдущему полю
+      passwordList[position] = value;
+      focusNode.previousFocus();
     }
     onConfirm();
   }

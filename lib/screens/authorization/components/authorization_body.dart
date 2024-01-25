@@ -110,6 +110,7 @@ class AuthorizationBody extends GetView<AuthorizationController> {
                       ? kMainAppColor
                       : kSecondaryButtonColor,
                   text: "Confirm",
+                  radius: 12,
                   onPressed: () {
                     controller.onSendForm();
                   },

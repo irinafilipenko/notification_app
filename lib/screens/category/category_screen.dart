@@ -14,7 +14,7 @@ class CategoryScreen extends GetView<CategoryTwoController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: kAppBarColor,
           elevation: 0.0,
           title: Obx(() {
             return IndexedStack(

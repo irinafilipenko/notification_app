@@ -18,7 +18,7 @@ class AuthorizationScreen extends StatelessWidget {
       },
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.black,
+            backgroundColor: kAppBarColor,
             elevation: 0.0,
             title: Text(
               "Log In",

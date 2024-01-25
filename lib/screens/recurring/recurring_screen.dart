@@ -23,7 +23,7 @@ class RecurringScreen extends GetView<RecurringController> {
       },
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.black,
+            backgroundColor: kAppBarColor,
             elevation: 0.0,
             title: Obx(() {
               return IndexedStack(

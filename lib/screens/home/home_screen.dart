@@ -19,7 +19,7 @@ class HomeScreen extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.black,
+        backgroundColor: kAppBarColor,
         elevation: 0.0,
         title: Text(
           "Notifications",
