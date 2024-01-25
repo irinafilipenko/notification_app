@@ -76,13 +76,23 @@ class AuthorizationController extends GetxController
       {required String value,
       required int position,
       required FocusNode focusNode}) {
-    if (value.isNotEmpty && position < 3) {
+    if (!fieldThreeController.text.contains('\u200b')) {
+      // Здесь выполняется код, если символ \u200b отсутствует в тексте
+      print("Символ \u200b отсутствует");
+    } else {
+      // Здесь выполняется код, если символ \u200b присутствует в тексте
+      print("Символ \u200b присутствует");
+    }
+    if (value.isNotEmpty &&
+        !fieldThreeController.text.contains('\u200b') &&
+        position < 3) {
       passwordList[position] = value;
       focusNode.nextFocus();
     } else if (value.isEmpty && position > 0) {
       // print("previousFocus");
       // Если поле пустое и не является первым полем, переходите к предыдущему полю
       passwordList[position] = value;
+
       focusNode.previousFocus();
     }
     onConfirm();

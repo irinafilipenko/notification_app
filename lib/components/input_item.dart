@@ -47,8 +47,9 @@ class InputItem extends StatelessWidget {
               LengthLimitingTextInputFormatter(2),
             ],
             onChanged: (value) {
+              controller.fieldOneController.text = value;
               controller.nextField(
-                  value: value,
+                  value: controller.fieldOneController.text,
                   position: 0,
                   focusNode: controller.fieldOneFocusNode);
             },
@@ -89,8 +90,9 @@ class InputItem extends StatelessWidget {
                 // controller.fieldTwoFocusNode.previousFocus();
                 // print("isEmpty");
               }
+              controller.fieldTwoController.text = value;
               controller.nextField(
-                  value: value,
+                  value: controller.fieldTwoController.text,
                   position: 1,
                   focusNode: controller.fieldTwoFocusNode);
               // controller.fieldTwoController.text = '\u200b$value';
@@ -142,8 +144,9 @@ class InputItem extends StatelessWidget {
                 // controller.fieldThreeFocusNode.previousFocus();
                 // print("isEmpty");
               }
+              controller.fieldThreeController.text = value;
               controller.nextField(
-                  value: value,
+                  value: controller.fieldThreeController.text,
                   position: 2,
                   focusNode: controller.fieldThreeFocusNode);
             },
@@ -182,8 +185,11 @@ class InputItem extends StatelessWidget {
                 // controller.fieldFourFocusNode.previousFocus();
                 // print("isEmpty");
               }
+              // print(value);
+              // print(controller.fieldFourController.text);
+              controller.fieldFourController.text = value;
               controller.nextField(
-                  value: value,
+                  value: controller.fieldFourController.text,
                   position: 3,
                   focusNode: controller.fieldFourFocusNode);
             },
