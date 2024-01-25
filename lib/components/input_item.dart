@@ -44,14 +44,16 @@ class InputItem extends StatelessWidget {
             cursorColor: const Color(0xFF9F9F9F),
             decoration: kTimeInputDecoration,
             inputFormatters: [
-              LengthLimitingTextInputFormatter(2),
+              LengthLimitingTextInputFormatter(1),
             ],
             onChanged: (value) {
-              controller.fieldOneController.text = value;
               controller.nextField(
-                  value: controller.fieldOneController.text,
+                  value: value,
                   position: 0,
                   focusNode: controller.fieldOneFocusNode);
+            },
+            onEditingComplete: () {
+              print("on");
             },
           ),
         ),
@@ -80,29 +82,16 @@ class InputItem extends StatelessWidget {
             cursorColor: const Color(0xFF9F9F9F),
             decoration: kTimeInputDecoration,
             inputFormatters: [
-              LengthLimitingTextInputFormatter(2),
+              LengthLimitingTextInputFormatter(1),
             ],
             onChanged: (value) {
-              print(value);
-              if (value.isEmpty) {
-                // Если поле пустое, устанавливаем символ \u200b
-                controller.fieldTwoController.text = '\u200b';
-                // controller.fieldTwoFocusNode.previousFocus();
-                // print("isEmpty");
-              }
-              controller.fieldTwoController.text = value;
               controller.nextField(
-                  value: controller.fieldTwoController.text,
+                  value: value,
                   position: 1,
                   focusNode: controller.fieldTwoFocusNode);
-              // controller.fieldTwoController.text = '\u200b$value';
-              // print(controller.fieldTwoController.text);
-              // if (controller.fieldTwoController.text != "\u200b") {
-              //   print("isNotEmpty");
-              // } else {
-              //   print("isEmpty");
-              //   // controller.nextField(value: value, position: 1);
-              // }
+            },
+            onEditingComplete: () {
+              print("on");
             },
           ),
         ),
@@ -135,20 +124,16 @@ class InputItem extends StatelessWidget {
             cursorColor: const Color(0xFF9F9F9F),
             decoration: kTimeInputDecoration,
             inputFormatters: [
-              LengthLimitingTextInputFormatter(2),
+              LengthLimitingTextInputFormatter(1),
             ],
             onChanged: (value) {
-              if (value.isEmpty) {
-                // Если поле пустое, устанавливаем символ \u200b
-                controller.fieldThreeController.text = '\u200b';
-                // controller.fieldThreeFocusNode.previousFocus();
-                // print("isEmpty");
-              }
-              controller.fieldThreeController.text = value;
               controller.nextField(
-                  value: controller.fieldThreeController.text,
+                  value: value,
                   position: 2,
                   focusNode: controller.fieldThreeFocusNode);
+            },
+            onEditingComplete: () {
+              print("on");
             },
           ),
         ),
@@ -176,20 +161,11 @@ class InputItem extends StatelessWidget {
             cursorColor: const Color(0xFF9F9F9F),
             decoration: kTimeInputDecoration,
             inputFormatters: [
-              LengthLimitingTextInputFormatter(2),
+              LengthLimitingTextInputFormatter(1),
             ],
             onChanged: (value) {
-              if (value.isEmpty) {
-                // Если поле пустое, устанавливаем символ \u200b
-                controller.fieldFourController.text = '\u200b';
-                // controller.fieldFourFocusNode.previousFocus();
-                // print("isEmpty");
-              }
-              // print(value);
-              // print(controller.fieldFourController.text);
-              controller.fieldFourController.text = value;
               controller.nextField(
-                  value: controller.fieldFourController.text,
+                  value: value,
                   position: 3,
                   focusNode: controller.fieldFourFocusNode);
             },
