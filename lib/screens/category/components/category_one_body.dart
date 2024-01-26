@@ -108,11 +108,11 @@ class CategoryOneBody extends GetView<CategoryTwoController> {
                                         .subCategories[ind].middleIcon,
                                     isSelected: controller.categoryList[index]
                                         .subCategories[ind].isSelected,
-                                    category: controller
-                                            .categoryList[index].isSelected
-                                        ? controller.categoryList[index]
-                                            .subCategories[ind].category
-                                        : "category",
+                                    // category: controller
+                                    //         .categoryList[index].isSelected
+                                    //     ? controller.categoryList[index]
+                                    //         .subCategories[ind].category
+                                    //     : "category",
                                     day: controller.categoryList[index]
                                         .subCategories[ind].day,
                                   ),
@@ -179,16 +179,16 @@ class CategoryOneBody extends GetView<CategoryTwoController> {
                                                   .subCategories[ind]
                                                   .activities[idx]
                                                   .isSelected,
-                                              category: controller
-                                                      .categoryList[index]
-                                                      .subCategories[ind]
-                                                      .isSelected
-                                                  ? controller
-                                                      .categoryList[index]
-                                                      .subCategories[ind]
-                                                      .activities[idx]
-                                                      .category
-                                                  : "category",
+                                              // category: controller
+                                              //         .categoryList[index]
+                                              //         .subCategories[ind]
+                                              //         .isSelected
+                                              //     ? controller
+                                              //         .categoryList[index]
+                                              //         .subCategories[ind]
+                                              //         .activities[idx]
+                                              //         .category
+                                              //     : "category",
                                             );
                                           }))
                                 ],

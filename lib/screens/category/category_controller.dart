@@ -7,6 +7,8 @@ class CategoryTwoController extends GetxController {
   RxBool isCheckOneAll = false.obs;
   RxInt indexScreen = 0.obs;
 
+  RxBool isSportOpen = false.obs;
+
   @override
   void onInit() {
     indexScreen.value = argumentData[0]['index'];
@@ -16,7 +18,7 @@ class CategoryTwoController extends GetxController {
 
   RxList<Category> categoryList = [
     Category(
-      title: 'Sport',
+      title: "Sport",
       categoryOpen: "sport",
       mainIcon: '⚽',
       isSelected: false,

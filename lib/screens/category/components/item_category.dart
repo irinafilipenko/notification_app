@@ -106,11 +106,11 @@ class ItemCategory extends StatelessWidget {
             ),
           ),
           Container(
-            margin: categoryOpen == "sport"
+            margin: categoryOpen == "sport" || category == "onCategory"
                 ? const EdgeInsets.only(left: 50)
-                // : categoryOpen == "sub" || category == "activity"
-                : const EdgeInsets.only(left: 85),
-            // : null,
+                : categoryOpen == "sub" || category == "activity"
+                    ? const EdgeInsets.only(left: 85)
+                    : null,
             width: double.infinity,
             height: 1,
             color: const Color(0xFFF3F3F4),
