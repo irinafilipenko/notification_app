@@ -104,7 +104,7 @@ class _SelectIconBottomSheet extends State<SelectIconBottomSheet> {
                         color: Color(colorsList[index]),
                         borderRadius: BorderRadius.circular(100),
                         border: Border.all(
-                          color: Color(0xFFE6E6E6),
+                          color: const Color(0xFFE6E6E6),
                           width: 1,
                         ),
                       ),
@@ -158,7 +158,7 @@ class _SelectIconBottomSheet extends State<SelectIconBottomSheet> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
                         border: Border.all(
-                          color: Color(0xFFE6E6E6),
+                          color: const Color(0xFFE6E6E6),
                           width: 1,
                         ),
                       ),

@@ -56,18 +56,14 @@ class MainButton extends StatelessWidget {
                   : const SizedBox(
                       width: 6,
                     ),
-              Flexible(
-                child: Text(
-                  text ?? '',
-                  textScaleFactor: 1,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                      fontFamily: "Roboto",
-                      color: textColor,
-                      fontWeight: fontWeght,
-                      fontSize: size),
-                ),
+              Text(
+                text ?? '',
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                    fontFamily: "Roboto",
+                    color: textColor,
+                    fontWeight: fontWeght,
+                    fontSize: size),
               ),
             ],
           ),

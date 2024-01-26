@@ -111,10 +111,20 @@ class AddNewItemController extends GetxController with WidgetsBindingObserver {
     isKeyboardOpen.value = value > 0;
   }
 
-  void nextField({required String value, required int position}) {
-    if (value.length == 1) {
+  void nextField({
+    required String value,
+    required int position,
+  }) {
+    if (value.isNotEmpty &&
+        // !fieldThreeController.text.contains('\u200b') &&
+        position < 3) {
       timedList[position] = value;
       focusNode.nextFocus();
+    } else if (value.isEmpty && position > 0) {
+      fieldOneController.text = '';
+      fieldTwoController.text = '';
+      fieldThreeController.text = '';
+      fieldFourController.text = '';
     }
     onConfirm();
   }

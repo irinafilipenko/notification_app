@@ -31,10 +31,10 @@ class CategoryScreen extends GetView<CategoryTwoController> {
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.30), // цвет тени
-                  spreadRadius: 0, // радиус распространения
-                  blurRadius: 4, // радиус размытия
-                  offset: Offset(0, 0.5), // смещение тени
+                  color: Colors.black.withOpacity(0.30),
+                  spreadRadius: 0,
+                  blurRadius: 4,
+                  offset: const Offset(0, 0.5),
                 ),
               ],
             ),

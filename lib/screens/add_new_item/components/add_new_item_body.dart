@@ -34,6 +34,7 @@ class AddNewItemBody extends StatelessWidget {
                       height: 6,
                     ),
                     TextFormField(
+                      textInputAction: TextInputAction.next,
                       minLines: 5,
                       maxLines: null,
                       textAlignVertical: TextAlignVertical.center,

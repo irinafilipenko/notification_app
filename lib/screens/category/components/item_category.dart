@@ -32,15 +32,15 @@ class ItemCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     EdgeInsets? margin;
     if (categoryOpen == "sport") {
-      margin = EdgeInsets.only(left: 50);
+      margin = const EdgeInsets.only(left: 50);
     }
     if (category == "onCategory" && !isSelected) {
-      margin = EdgeInsets.only(left: 50);
+      margin = const EdgeInsets.only(left: 50);
     }
     if (category == "onCategory" && isSelected) {
-      margin = EdgeInsets.only(left: 75);
+      margin = const EdgeInsets.only(left: 75);
     } else if (categoryOpen == "sub" || category == "activity") {
-      margin = EdgeInsets.only(left: 75);
+      margin = const EdgeInsets.only(left: 75);
     }
     return GestureDetector(
       onTap: onTapMainItem,
@@ -108,7 +108,7 @@ class ItemCategory extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: onCheck,
-                  child: Container(
+                  child: SizedBox(
                     height: 56,
                     child: Center(
                       child: Material(

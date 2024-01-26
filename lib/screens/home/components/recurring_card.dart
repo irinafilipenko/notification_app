@@ -24,7 +24,7 @@ class RecuringCard extends StatelessWidget {
           ),
         ),
         child: ListTile(
-          leading: Container(
+          leading: SizedBox(
             height: 24,
             child: Text(
               text,

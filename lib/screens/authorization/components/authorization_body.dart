@@ -23,9 +23,9 @@ class AuthorizationBody extends GetView<AuthorizationController> {
                 const SizedBox(
                   height: 72,
                 ),
-                Container(
+                const SizedBox(
                   height: 32,
-                  child: const Text(
+                  child: Text(
                     "Log In",
                     style: TextStyle(
                       fontFamily: 'Roboto',
@@ -38,7 +38,7 @@ class AuthorizationBody extends GetView<AuthorizationController> {
                 const SizedBox(
                   height: 16,
                 ),
-                Container(
+                SizedBox(
                   height: 24,
                   child: Text("Enter current time in hh : mm format",
                       style: kSecondaryTextStyle),
@@ -47,7 +47,7 @@ class AuthorizationBody extends GetView<AuthorizationController> {
                   height: 42,
                 ),
                 Obx(() {
-                  return Container(
+                  return SizedBox(
                     height: 48,
                     child: Text(
                       controller.timeString.value,

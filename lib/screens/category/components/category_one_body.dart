@@ -17,11 +17,11 @@ class CategoryOneBody extends GetView<CategoryTwoController> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             height: 56,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               border: Border(
                 bottom: BorderSide(
                   width: 1,
-                  color: const Color(0xFFF3F3F4),
+                  color: Color(0xFFF3F3F4),
                 ),
               ),
             ),
@@ -31,7 +31,7 @@ class CategoryOneBody extends GetView<CategoryTwoController> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "All Trigers",
                   style: TextStyle(
                     fontFamily: 'Roboto',
@@ -45,7 +45,7 @@ class CategoryOneBody extends GetView<CategoryTwoController> {
                       onTap: () {
                         controller.onCheckAll();
                       },
-                      child: SvgPicture.asset(controller.isCheckOneAll.value
+                      child: SvgPicture.asset(controller.isCheckAll.value
                           ? "assets/icons/checkbox.svg"
                           : 'assets/icons/checkbox_empty.svg'));
                 }),
@@ -81,7 +81,6 @@ class CategoryOneBody extends GetView<CategoryTwoController> {
                               controller.categoryList.refresh();
                             },
                             onCheck: () {
-                              print("Hello");
                               controller.categoryList[index].isCheck =
                                   !controller.categoryList[index].isCheck;
                               controller.categoryList.refresh();
@@ -342,46 +341,46 @@ class CategoryOneBody extends GetView<CategoryTwoController> {
                       child: Column(
                         children: [
                           SvgPicture.asset("assets/icons/circle.svg"),
-                          SizedBox(height: 48),
+                          const SizedBox(height: 48),
                           SvgPicture.asset("assets/icons/circle.svg"),
                           if (controller.isSameVeryOpen.value &&
                               !controller.isEveningOpen.value) ...[
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
                           ],
                           if (!controller.isSameVeryOpen.value &&
                               controller.isEveningOpen.value) ...[
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
                           ],
                           if (!controller.isSameVeryOpen.value &&
                               !controller.isEveningOpen.value) ...[
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
                           ],
                           if (controller.isSameVeryOpen.value &&
                               controller.isEveningOpen.value) ...[
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
-                            SizedBox(height: 174),
+                            const SizedBox(height: 174),
                             SvgPicture.asset("assets/icons/circle.svg"),
-                            SizedBox(height: 48),
+                            const SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
                           ]
                         ],
@@ -411,7 +410,7 @@ class CategoryOneBody extends GetView<CategoryTwoController> {
                       child: Column(
                         children: [
                           SvgPicture.asset("assets/icons/circle.svg"),
-                          SizedBox(
+                          const SizedBox(
                             height: 48,
                           ),
                           SvgPicture.asset("assets/icons/circle.svg"),
@@ -442,7 +441,7 @@ class CategoryOneBody extends GetView<CategoryTwoController> {
                       child: Column(
                         children: [
                           SvgPicture.asset("assets/icons/circle.svg"),
-                          SizedBox(
+                          const SizedBox(
                             height: 48,
                           ),
                           SvgPicture.asset("assets/icons/circle.svg"),
@@ -473,7 +472,7 @@ class CategoryOneBody extends GetView<CategoryTwoController> {
                       child: Column(
                         children: [
                           SvgPicture.asset("assets/icons/circle.svg"),
-                          SizedBox(
+                          const SizedBox(
                             height: 48,
                           ),
                           SvgPicture.asset("assets/icons/circle.svg"),

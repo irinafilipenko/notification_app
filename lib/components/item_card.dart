@@ -70,7 +70,7 @@ class ItemCard extends StatelessWidget {
                       ),
                 time == "" || time == null
                     ? const SizedBox()
-                    : Container(
+                    : SizedBox(
                         height: 24,
                         child: Row(
                           children: [

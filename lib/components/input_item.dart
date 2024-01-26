@@ -36,16 +36,13 @@ class InputItem extends StatelessWidget {
             cursorColor: const Color(0xFF9F9F9F),
             decoration: kTimeInputDecoration,
             inputFormatters: [
-              LengthLimitingTextInputFormatter(1),
+              LengthLimitingTextInputFormatter(2),
             ],
             onChanged: (value) {
               controller.nextField(
                 value: value,
                 position: 0,
               );
-            },
-            onEditingComplete: () {
-              print("on");
             },
           ),
         ),
@@ -72,16 +69,13 @@ class InputItem extends StatelessWidget {
             cursorColor: const Color(0xFF9F9F9F),
             decoration: kTimeInputDecoration,
             inputFormatters: [
-              LengthLimitingTextInputFormatter(1),
+              LengthLimitingTextInputFormatter(2),
             ],
             onChanged: (value) {
               controller.nextField(
                 value: value,
                 position: 1,
               );
-            },
-            onEditingComplete: () {
-              print("on");
             },
           ),
         ),
@@ -112,7 +106,7 @@ class InputItem extends StatelessWidget {
             cursorColor: const Color(0xFF9F9F9F),
             decoration: kTimeInputDecoration,
             inputFormatters: [
-              LengthLimitingTextInputFormatter(1),
+              LengthLimitingTextInputFormatter(2),
             ],
             onChanged: (value) {
               controller.nextField(
@@ -147,7 +141,7 @@ class InputItem extends StatelessWidget {
             cursorColor: const Color(0xFF9F9F9F),
             decoration: kTimeInputDecoration,
             inputFormatters: [
-              LengthLimitingTextInputFormatter(1),
+              LengthLimitingTextInputFormatter(2),
             ],
             onChanged: (value) {
               controller.nextField(
