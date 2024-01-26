@@ -71,6 +71,13 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                                 controller.isSportOpen.value =
                                     !controller.isSportOpen.value;
                               }
+                              if (controller.categoryOneList[index].title ==
+                                  "Work") {
+                                controller.isWorkOpen.value =
+                                    !controller.isWorkOpen.value;
+                              }
+                              controller.onTopDots();
+                              controller.onTopLine();
                               controller.categoryOneList.refresh();
                             },
                             onCheck: () {
@@ -109,7 +116,15 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                                                   .categoryOneList[index]
                                                   .subCategories[ind]
                                                   .isSelected;
-
+                                          if (controller.categoryOneList[index]
+                                                  .subCategories[ind].title ==
+                                              'Some very long names of action with many symbols in two, three, or four lines with text; the limit should be four lines.') {
+                                            controller.isSameVeryOpen.value =
+                                                !controller
+                                                    .isSameVeryOpen.value;
+                                          }
+                                          controller.onTopDots();
+                                          controller.onTopLine();
                                           controller.categoryOneList.refresh();
                                         },
                                         isLongText: controller
@@ -251,14 +266,25 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                   child: Positioned(
                       top: 59,
                       left: 27,
-                      child: Column(
-                        children: [
-                          SvgPicture.asset("assets/icons/lines1.svg"),
-                          SvgPicture.asset("assets/icons/line2.svg"),
-                          SvgPicture.asset("assets/icons/line2.svg"),
-                          SvgPicture.asset("assets/icons/line3.svg"),
-                        ],
-                      )),
+                      child: controller.isSameVeryOpen.value
+                          ? Column(
+                              children: [
+                                SvgPicture.asset("assets/icons/lines1.svg"),
+                                SvgPicture.asset("assets/icons/line2.svg"),
+                                SvgPicture.asset("assets/icons/line2.svg"),
+                                SvgPicture.asset("assets/icons/line2.svg"),
+                                SvgPicture.asset("assets/icons/line2.svg"),
+                                SvgPicture.asset("assets/icons/line3.svg"),
+                              ],
+                            )
+                          : Column(
+                              children: [
+                                SvgPicture.asset("assets/icons/lines1.svg"),
+                                SvgPicture.asset("assets/icons/line2.svg"),
+                                SvgPicture.asset("assets/icons/line2.svg"),
+                                SvgPicture.asset("assets/icons/line3.svg"),
+                              ],
+                            )),
                 );
               }),
               Obx(() {
@@ -277,6 +303,82 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                           SizedBox(
                             height: 48,
                           ),
+                          SvgPicture.asset("assets/icons/circle.svg"),
+                          SizedBox(
+                            height: 48,
+                          ),
+                          SvgPicture.asset("assets/icons/circle.svg"),
+                          controller.isSameVeryOpen.value
+                              ? Column(
+                                  children: [
+                                    SizedBox(
+                                      height: 48,
+                                    ),
+                                    SvgPicture.asset("assets/icons/circle.svg"),
+                                    SizedBox(
+                                      height: 48,
+                                    ),
+                                    SvgPicture.asset("assets/icons/circle.svg"),
+                                  ],
+                                )
+                              : SizedBox()
+                        ],
+                      )),
+                );
+              }),
+              Obx(() {
+                return Visibility(
+                  visible: controller.isSameVeryOpen.value,
+                  child: Positioned(
+                      top: 188,
+                      left: 60,
+                      child: Column(
+                        children: [
+                          SvgPicture.asset("assets/icons/line2.svg"),
+                          SvgPicture.asset("assets/icons/line3.svg"),
+                        ],
+                      )),
+                );
+              }),
+              Obx(() {
+                return Visibility(
+                  visible: controller.isSameVeryOpen.value,
+                  child: Positioned(
+                      top: 211,
+                      left: 58,
+                      child: Column(
+                        children: [
+                          SvgPicture.asset("assets/icons/circle.svg"),
+                          SizedBox(
+                            height: 48,
+                          ),
+                          SvgPicture.asset("assets/icons/circle.svg"),
+                        ],
+                      )),
+                );
+              }),
+              Obx(() {
+                return Visibility(
+                  visible: controller.isWorkOpen.value,
+                  child: Positioned(
+                      top: controller.topLine,
+                      left: 27,
+                      child: Column(
+                        children: [
+                          SvgPicture.asset("assets/icons/line2.svg"),
+                          SvgPicture.asset("assets/icons/line3.svg"),
+                        ],
+                      )),
+                );
+              }),
+              Obx(() {
+                return Visibility(
+                  visible: controller.isWorkOpen.value,
+                  child: Positioned(
+                      top: controller.topDots,
+                      left: 25,
+                      child: Column(
+                        children: [
                           SvgPicture.asset("assets/icons/circle.svg"),
                           SizedBox(
                             height: 48,

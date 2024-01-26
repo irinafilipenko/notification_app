@@ -8,12 +8,43 @@ class CategoryTwoController extends GetxController {
   RxInt indexScreen = 0.obs;
 
   RxBool isSportOpen = false.obs;
+  RxBool isSameVeryOpen = false.obs;
+  RxBool isWorkOpen = false.obs;
+  double topDots = 0;
+  double topLine = 0;
 
   @override
   void onInit() {
     indexScreen.value = argumentData[0]['index'];
-
+    onTopDots();
+    onTopLine();
     super.onInit();
+  }
+
+  onTopDots() {
+    if (isWorkOpen.value && !isSportOpen.value && !isSameVeryOpen.value) {
+      topDots = 140;
+    }
+    if (isWorkOpen.value && isSportOpen.value && !isSameVeryOpen.value) {
+      topDots = 440;
+    }
+    if (isWorkOpen.value && isSportOpen.value && isSameVeryOpen.value) {
+      print("is");
+      topDots = 555;
+    }
+  }
+
+  onTopLine() {
+    if (isWorkOpen.value && !isSportOpen.value && !isSameVeryOpen.value) {
+      topLine = 117;
+    }
+    if (isWorkOpen.value && isSportOpen.value && !isSameVeryOpen.value) {
+      topLine = 417;
+    }
+    if (isWorkOpen.value && isSportOpen.value && isSameVeryOpen.value) {
+      print("is");
+      topLine = 532;
+    }
   }
 
   RxList<Category> categoryList = [
