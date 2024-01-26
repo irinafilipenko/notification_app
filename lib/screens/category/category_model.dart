@@ -18,7 +18,7 @@ class Category {
 
 class SubCategory {
   String category;
-
+  String categoryOpen;
   String day;
   String title;
   String middleIcon;
@@ -30,6 +30,7 @@ class SubCategory {
   SubCategory({
     required this.title,
     required this.category,
+    this.categoryOpen = "all",
     required this.middleIcon,
     this.day = '',
     this.isLongText = false,

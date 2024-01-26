@@ -99,8 +99,17 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                                           !controller.categoryOneList[index]
                                               .subCategories[ind].isSelected;
 
+                                      print(controller.categoryOneList[index]
+                                          .subCategories[ind].categoryOpen);
+
                                       controller.categoryOneList.refresh();
                                     },
+                                    categoryOpenSub: controller
+                                            .categoryOneList[index]
+                                            .subCategories[ind]
+                                            .isSelected
+                                        ? "sub"
+                                        : "all",
                                     isLongText: controller
                                         .categoryOneList[index]
                                         .subCategories[ind]

@@ -134,6 +134,7 @@ class CategoryTwoController extends GetxController {
       subCategories: [],
     ),
   ].obs;
+
   RxList<Category> categoryOneList = [
     Category(
       title: 'Sport',
@@ -144,6 +145,7 @@ class CategoryTwoController extends GetxController {
       subCategories: [
         SubCategory(
           category: "onCategory",
+          categoryOpen: "sub",
           isLongText: true,
           title:
               'Some very long names of action with many symbols in two, three, or four lines with text; the limit should be four lines.',
@@ -171,6 +173,7 @@ class CategoryTwoController extends GetxController {
         SubCategory(
           category: "onCategory",
           title: 'Evening',
+          categoryOpen: "sub",
           day: "day",
           middleIcon: "🍕",
           isSelected: false,

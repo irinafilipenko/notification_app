@@ -7,6 +7,7 @@ class ItemCategory extends StatelessWidget {
   final String day;
   final String category;
   final String categoryOpen;
+  final String categoryOpenSub;
 
   final String icon;
   final bool isCheck;
@@ -19,6 +20,7 @@ class ItemCategory extends StatelessWidget {
       {required this.title,
       this.category = "category",
       this.categoryOpen = "all",
+      this.categoryOpenSub = "all",
       this.day = "",
       this.isLongText = false,
       required this.onTapMainItem,
@@ -30,7 +32,6 @@ class ItemCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(categoryOpen);
     return GestureDetector(
       onTap: onTapMainItem,
       child: Column(
@@ -107,11 +108,11 @@ class ItemCategory extends StatelessWidget {
             ),
           ),
           Container(
-            margin: category == "onCategory" || categoryOpen == "sport"
+            margin: categoryOpen == "sport"
                 ? const EdgeInsets.only(left: 50)
-                : category == "activity"
-                    ? const EdgeInsets.only(left: 85)
-                    : null,
+                // : categoryOpen == "sub" || category == "activity"
+                : const EdgeInsets.only(left: 85),
+            // : null,
             width: double.infinity,
             height: 1,
             color: const Color(0xFFF3F3F4),
