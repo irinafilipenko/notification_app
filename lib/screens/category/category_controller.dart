@@ -17,6 +17,7 @@ class CategoryTwoController extends GetxController {
   RxList<Category> categoryList = [
     Category(
       title: 'Sport',
+      categoryOpen: "sport",
       mainIcon: '⚽',
       isSelected: false,
       isCheck: false,
@@ -136,12 +137,14 @@ class CategoryTwoController extends GetxController {
   RxList<Category> categoryOneList = [
     Category(
       title: 'Sport',
+      categoryOpen: "sport",
       mainIcon: '⚽',
       isSelected: false,
       isCheck: false,
       subCategories: [
         SubCategory(
           category: "onCategory",
+          isLongText: true,
           title:
               'Some very long names of action with many symbols in two, three, or four lines with text; the limit should be four lines.',
           day: "day",
@@ -175,6 +178,7 @@ class CategoryTwoController extends GetxController {
           activities: [
             Activity(
               category: "activity",
+              isLongText: true,
               title:
                   'Some very long names of action with many symbols in two, three, or four lines with text; the limit should be four lines.',
               secondIcon: "🏓️",

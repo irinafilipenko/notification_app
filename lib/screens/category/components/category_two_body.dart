@@ -12,20 +12,26 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             height: 56,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
-                  color: Color(0xFFE6E6E6),
-                  width: 1.0,
+                  width: 1,
+                  color: const Color(0xFFF3F3F4),
                 ),
               ),
             ),
-            child: ListTile(
-                leading: const Text(
+            width: double.infinity,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
                   "All Trigers",
                   style: TextStyle(
                     fontFamily: 'Roboto',
@@ -34,7 +40,7 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                     fontSize: 16,
                   ),
                 ),
-                trailing: Obx(() {
+                Obx(() {
                   return GestureDetector(
                       onTap: () {
                         controller.onCheckAll();
@@ -42,7 +48,9 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                       child: SvgPicture.asset(controller.isCheckOneAll.value
                           ? "assets/icons/checkbox.svg"
                           : 'assets/icons/checkbox_empty.svg'));
-                })),
+                }),
+              ],
+            ),
           ),
           ListView.builder(
               shrinkWrap: true,
@@ -64,6 +72,10 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                               !controller.categoryOneList[index].isCheck;
                           controller.categoryOneList.refresh();
                         },
+                        categoryOpen:
+                            controller.categoryOneList[index].isSelected
+                                ? "sport"
+                                : "all",
                         title: controller.categoryOneList[index].title,
                         isCheck: controller.categoryOneList[index].isCheck,
                         icon: controller.categoryOneList[index].mainIcon,
@@ -89,6 +101,10 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
 
                                       controller.categoryOneList.refresh();
                                     },
+                                    isLongText: controller
+                                        .categoryOneList[index]
+                                        .subCategories[ind]
+                                        .isLongText,
                                     onCheck: () {
                                       controller.categoryOneList[index]
                                               .subCategories[ind].isCheck =
@@ -161,6 +177,11 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                                                 controller.categoryOneList
                                                     .refresh();
                                               },
+                                              isLongText: controller
+                                                  .categoryOneList[index]
+                                                  .subCategories[ind]
+                                                  .activities[idx]
+                                                  .isLongText,
                                               title: controller
                                                   .categoryOneList[index]
                                                   .subCategories[ind]

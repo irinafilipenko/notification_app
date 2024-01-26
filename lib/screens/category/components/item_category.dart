@@ -6,16 +6,21 @@ class ItemCategory extends StatelessWidget {
   final String title;
   final String day;
   final String category;
+  final String categoryOpen;
+
   final String icon;
   final bool isCheck;
   final bool isSelected;
+  final bool isLongText;
   final Function() onTapMainItem;
   final Function() onCheck;
   final FontWeight fontWeght;
   const ItemCategory(
       {required this.title,
       this.category = "category",
+      this.categoryOpen = "all",
       this.day = "",
+      this.isLongText = false,
       required this.onTapMainItem,
       required this.onCheck,
       required this.isCheck,
@@ -25,9 +30,11 @@ class ItemCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(categoryOpen);
     return GestureDetector(
       onTap: onTapMainItem,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -39,7 +46,9 @@ class ItemCategory extends StatelessWidget {
               children: [
                 Expanded(
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: isLongText == true
+                        ? CrossAxisAlignment.start
+                        : CrossAxisAlignment.center,
                     children: [
                       category == "onCategory"
                           ? Container(
@@ -59,12 +68,13 @@ class ItemCategory extends StatelessWidget {
                           : const SizedBox(),
                       isSelected
                           ? Container(
-                              padding:
-                                  const EdgeInsets.only(right: 12, top: 12),
+                              padding: EdgeInsets.only(
+                                  right: 12, top: isLongText == true ? 18 : 0),
                               child: SvgPicture.asset(
                                   "assets/icons/less_icon.svg"))
                           : Padding(
-                              padding: const EdgeInsets.only(top: 12),
+                              padding: EdgeInsets.only(
+                                  right: 2, top: isLongText == true ? 18 : 0),
                               child: Text(icon),
                             ),
                       Expanded(
@@ -75,6 +85,7 @@ class ItemCategory extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               color: kAppBarColor,
+                              height: 1.5,
                               fontWeight: fontWeght,
                               fontSize: 16,
                             ),
@@ -96,14 +107,14 @@ class ItemCategory extends StatelessWidget {
             ),
           ),
           Container(
-            margin: category == "onCategory"
+            margin: category == "onCategory" || categoryOpen == "sport"
                 ? const EdgeInsets.only(left: 50)
                 : category == "activity"
-                    ? const EdgeInsets.only(left: 80)
+                    ? const EdgeInsets.only(left: 85)
                     : null,
             width: double.infinity,
             height: 1,
-            color: const Color(0xFFE6E6E6),
+            color: const Color(0xFFF3F3F4),
           )
         ],
       ),
