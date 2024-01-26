@@ -17,9 +17,24 @@ class CategoryTwoController extends GetxController {
   @override
   void onInit() {
     indexScreen.value = argumentData[0]['index'];
-    onTopDots();
-    onTopLine();
+    if (indexScreen.value == 0) {
+      onTopDots();
+      onTopLine();
+    }
+    if (indexScreen.value == 1) {
+      onTopLineWork();
+      onTopDotsWork();
+    }
     super.onInit();
+  }
+
+  @override
+  void onClose() {
+    isSportOpen = false.obs;
+    isEveningOpen = false.obs;
+    isSameVeryOpen = false.obs;
+    isWorkOpen = false.obs;
+    super.onClose();
   }
 
   onTopDots() {
@@ -49,6 +64,33 @@ class CategoryTwoController extends GetxController {
     }
   }
 
+  onTopDotsWork() {
+    if (isWorkOpen.value && !isSportOpen.value && !isSameVeryOpen.value) {
+      topDots.value = 140;
+    }
+    if (isWorkOpen.value && isSportOpen.value && !isSameVeryOpen.value) {
+      topDots.value = 368;
+    }
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        !isSameVeryOpen.value &&
+        isEveningOpen.value) {
+      topDots.value = 483;
+    }
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        isSameVeryOpen.value &&
+        !isEveningOpen.value) {
+      topDots.value = 483;
+    }
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        isSameVeryOpen.value &&
+        isEveningOpen.value) {
+      topDots.value = 595;
+    }
+  }
+
   onTopLine() {
     if (isWorkOpen.value &&
         !isSportOpen.value &&
@@ -56,6 +98,7 @@ class CategoryTwoController extends GetxController {
         !isEveningOpen.value) {
       topLine.value = 117;
     }
+
     if (isWorkOpen.value &&
         isSportOpen.value &&
         !isSameVeryOpen.value &&
@@ -79,6 +122,39 @@ class CategoryTwoController extends GetxController {
         isSameVeryOpen.value &&
         isEveningOpen.value) {
       topLine.value = 715;
+    }
+  }
+
+  onTopLineWork() {
+    if (isWorkOpen.value &&
+        !isSportOpen.value &&
+        !isSameVeryOpen.value &&
+        !isEveningOpen.value) {
+      topLine.value = 117;
+    }
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        !isSameVeryOpen.value &&
+        !isEveningOpen.value) {
+      topLine.value = 345;
+    }
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        !isSameVeryOpen.value &&
+        isEveningOpen.value) {
+      topLine.value = 460;
+    }
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        isSameVeryOpen.value &&
+        !isEveningOpen.value) {
+      topLine.value = 460;
+    }
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        isSameVeryOpen.value &&
+        isEveningOpen.value) {
+      topLine.value = 572;
     }
   }
 
