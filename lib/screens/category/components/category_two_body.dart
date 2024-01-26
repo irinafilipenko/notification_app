@@ -270,27 +270,53 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                 return Visibility(
                   visible: controller.isSportOpen.value,
                   child: Positioned(
-                      top: 59,
-                      left: 27,
-                      child: controller.isSameVeryOpen.value
-                          ? Column(
-                              children: [
-                                SvgPicture.asset("assets/icons/lines1.svg"),
-                                SvgPicture.asset("assets/icons/line2.svg"),
-                                SvgPicture.asset("assets/icons/line2.svg"),
-                                SvgPicture.asset("assets/icons/line2.svg"),
-                                SvgPicture.asset("assets/icons/line2.svg"),
-                                SvgPicture.asset("assets/icons/line3.svg"),
-                              ],
-                            )
-                          : Column(
-                              children: [
-                                SvgPicture.asset("assets/icons/lines1.svg"),
-                                SvgPicture.asset("assets/icons/line2.svg"),
-                                SvgPicture.asset("assets/icons/line2.svg"),
-                                SvgPicture.asset("assets/icons/line3.svg"),
-                              ],
-                            )),
+                    top: 59,
+                    left: 27,
+                    child: () {
+                      // Check the conditions
+                      if (controller.isSameVeryOpen.value &&
+                          !controller.isEveningOpen.value) {
+                        // First condition met, return first Column
+                        return Column(
+                          children: [
+                            SvgPicture.asset("assets/icons/lines1.svg"),
+                            SvgPicture.asset("assets/icons/line2.svg"),
+                            SvgPicture.asset("assets/icons/line2.svg"),
+                            SvgPicture.asset("assets/icons/line2.svg"),
+                            SvgPicture.asset("assets/icons/line2.svg"),
+                            SvgPicture.asset("assets/icons/line3.svg"),
+                          ],
+                        );
+                      }
+                      if (controller.isSameVeryOpen.value &&
+                          controller.isEveningOpen.value) {
+                        // First condition met, return first Column
+                        return Column(
+                          children: [
+                            SvgPicture.asset("assets/icons/lines1.svg"),
+                            SvgPicture.asset("assets/icons/line2.svg"),
+                            SvgPicture.asset("assets/icons/line2.svg"),
+                            SvgPicture.asset("assets/icons/line2.svg"),
+                            SvgPicture.asset("assets/icons/lines1.svg"),
+                            SvgPicture.asset("assets/icons/lines1.svg"),
+                            SvgPicture.asset("assets/icons/line3.svg"),
+
+                            // SvgPicture.asset("assets/icons/line3.svg"),
+                          ],
+                        );
+                      } else {
+                        // Condition not met, return second Column
+                        return Column(
+                          children: [
+                            SvgPicture.asset("assets/icons/lines1.svg"),
+                            SvgPicture.asset("assets/icons/line2.svg"),
+                            SvgPicture.asset("assets/icons/line2.svg"),
+                            SvgPicture.asset("assets/icons/line3.svg"),
+                          ],
+                        );
+                      }
+                    }(),
+                  ),
                 );
               }),
               Obx(() {
@@ -302,32 +328,26 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                       child: Column(
                         children: [
                           SvgPicture.asset("assets/icons/circle.svg"),
-                          SizedBox(
-                            height: 120,
-                          ),
+                          SizedBox(height: 120),
                           SvgPicture.asset("assets/icons/circle.svg"),
-                          SizedBox(
-                            height: 48,
-                          ),
+                          SizedBox(height: 48),
                           SvgPicture.asset("assets/icons/circle.svg"),
-                          SizedBox(
-                            height: 48,
-                          ),
+                          SizedBox(height: 48),
                           SvgPicture.asset("assets/icons/circle.svg"),
-                          controller.isSameVeryOpen.value
-                              ? Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 48,
-                                    ),
-                                    SvgPicture.asset("assets/icons/circle.svg"),
-                                    SizedBox(
-                                      height: 48,
-                                    ),
-                                    SvgPicture.asset("assets/icons/circle.svg"),
-                                  ],
-                                )
-                              : SizedBox()
+                          if (controller.isSameVeryOpen.value &&
+                              !controller.isEveningOpen.value) ...[
+                            SizedBox(height: 48),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                            SizedBox(height: 48),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                          ],
+                          if (controller.isSameVeryOpen.value &&
+                              controller.isEveningOpen.value) ...[
+                            SizedBox(height: 240),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                            SizedBox(height: 48),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                          ]
                         ],
                       )),
                 );
@@ -388,6 +408,37 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                           SvgPicture.asset("assets/icons/circle.svg"),
                           SizedBox(
                             height: 48,
+                          ),
+                          SvgPicture.asset("assets/icons/circle.svg"),
+                        ],
+                      )),
+                );
+              }),
+              Obx(() {
+                return Visibility(
+                  visible: controller.isEveningOpen.value,
+                  child: Positioned(
+                      top: !controller.isSameVeryOpen.value ? 245 : 360,
+                      left: 58,
+                      child: Column(
+                        children: [
+                          SvgPicture.asset("assets/icons/lines1.svg"),
+                          SvgPicture.asset("assets/icons/line3.svg"),
+                        ],
+                      )),
+                );
+              }),
+              Obx(() {
+                return Visibility(
+                  visible: controller.isEveningOpen.value,
+                  child: Positioned(
+                      top: !controller.isSameVeryOpen.value ? 268 : 382,
+                      left: 56,
+                      child: Column(
+                        children: [
+                          SvgPicture.asset("assets/icons/circle.svg"),
+                          SizedBox(
+                            height: 120,
                           ),
                           SvgPicture.asset("assets/icons/circle.svg"),
                         ],
