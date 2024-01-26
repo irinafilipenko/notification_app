@@ -7,7 +7,6 @@ class ItemCategory extends StatelessWidget {
   final String day;
   final String category;
   final String categoryOpen;
-  final String categoryOpenSub;
 
   final String icon;
   final bool isCheck;
@@ -20,7 +19,6 @@ class ItemCategory extends StatelessWidget {
       {required this.title,
       this.category = "category",
       this.categoryOpen = "all",
-      this.categoryOpenSub = "all",
       this.day = "",
       this.isLongText = false,
       required this.onTapMainItem,
