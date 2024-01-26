@@ -288,6 +288,19 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                           ],
                         );
                       }
+                      if (!controller.isSameVeryOpen.value &&
+                          controller.isEveningOpen.value) {
+                        // First condition met, return first Column
+                        return Column(
+                          children: [
+                            SvgPicture.asset("assets/icons/lines1.svg"),
+                            SvgPicture.asset("assets/icons/line2.svg"),
+                            SvgPicture.asset("assets/icons/lines1.svg"),
+                            SvgPicture.asset("assets/icons/lines1.svg"),
+                            SvgPicture.asset("assets/icons/line3.svg"),
+                          ],
+                        );
+                      }
                       if (controller.isSameVeryOpen.value &&
                           controller.isEveningOpen.value) {
                         // First condition met, return first Column
@@ -330,19 +343,45 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                           SvgPicture.asset("assets/icons/circle.svg"),
                           SizedBox(height: 120),
                           SvgPicture.asset("assets/icons/circle.svg"),
-                          SizedBox(height: 48),
-                          SvgPicture.asset("assets/icons/circle.svg"),
-                          SizedBox(height: 48),
-                          SvgPicture.asset("assets/icons/circle.svg"),
                           if (controller.isSameVeryOpen.value &&
                               !controller.isEveningOpen.value) ...[
                             SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
                             SizedBox(height: 48),
                             SvgPicture.asset("assets/icons/circle.svg"),
+                            SizedBox(height: 48),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                            SizedBox(height: 48),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                          ],
+                          if (!controller.isSameVeryOpen.value &&
+                              controller.isEveningOpen.value) ...[
+                            SizedBox(height: 236),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                            SizedBox(height: 48),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                            // SizedBox(height: 48),
+                            // SvgPicture.asset("assets/icons/circle.svg"),
+                            // SizedBox(height: 48),
+                            // SvgPicture.asset("assets/icons/circle.svg"),
+                          ],
+                          if (!controller.isSameVeryOpen.value &&
+                              !controller.isEveningOpen.value) ...[
+                            SizedBox(height: 48),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                            SizedBox(height: 48),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                            SizedBox(height: 240),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                            SizedBox(height: 48),
+                            SvgPicture.asset("assets/icons/circle.svg"),
                           ],
                           if (controller.isSameVeryOpen.value &&
                               controller.isEveningOpen.value) ...[
+                            SizedBox(height: 48),
+                            SvgPicture.asset("assets/icons/circle.svg"),
+                            SizedBox(height: 48),
+                            SvgPicture.asset("assets/icons/circle.svg"),
                             SizedBox(height: 240),
                             SvgPicture.asset("assets/icons/circle.svg"),
                             SizedBox(height: 48),
