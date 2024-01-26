@@ -8,6 +8,7 @@ class CategoryTwoController extends GetxController {
   RxInt indexScreen = 0.obs;
 
   RxBool isSportOpen = false.obs;
+  RxBool isEveningOpen = false.obs;
   RxBool isSameVeryOpen = false.obs;
   RxBool isWorkOpen = false.obs;
   RxDouble topDots = 0.0.obs;
@@ -28,22 +29,56 @@ class CategoryTwoController extends GetxController {
     if (isWorkOpen.value && isSportOpen.value && !isSameVeryOpen.value) {
       topDots.value = 440;
     }
-    if (isWorkOpen.value && isSportOpen.value && isSameVeryOpen.value) {
-      print("is");
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        !isSameVeryOpen.value &&
+        isEveningOpen.value) {
+      topDots.value = 623;
+    }
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        isSameVeryOpen.value &&
+        !isEveningOpen.value) {
       topDots.value = 551;
+    }
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        isSameVeryOpen.value &&
+        isEveningOpen.value) {
+      topDots.value = 738;
     }
   }
 
   onTopLine() {
-    if (isWorkOpen.value && !isSportOpen.value && !isSameVeryOpen.value) {
+    if (isWorkOpen.value &&
+        !isSportOpen.value &&
+        !isSameVeryOpen.value &&
+        !isEveningOpen.value) {
       topLine.value = 117;
     }
-    if (isWorkOpen.value && isSportOpen.value && !isSameVeryOpen.value) {
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        !isSameVeryOpen.value &&
+        !isEveningOpen.value) {
       topLine.value = 417;
     }
-    if (isWorkOpen.value && isSportOpen.value && isSameVeryOpen.value) {
-      print("is");
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        !isSameVeryOpen.value &&
+        isEveningOpen.value) {
+      topLine.value = 600;
+    }
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        isSameVeryOpen.value &&
+        !isEveningOpen.value) {
       topLine.value = 532;
+    }
+    if (isWorkOpen.value &&
+        isSportOpen.value &&
+        isSameVeryOpen.value &&
+        isEveningOpen.value) {
+      topLine.value = 715;
     }
   }
 

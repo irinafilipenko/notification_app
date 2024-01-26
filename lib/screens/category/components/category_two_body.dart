@@ -123,6 +123,12 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                                                 !controller
                                                     .isSameVeryOpen.value;
                                           }
+                                          if (controller.categoryOneList[index]
+                                                  .subCategories[ind].title ==
+                                              'Evening') {
+                                            controller.isEveningOpen.value =
+                                                !controller.isEveningOpen.value;
+                                          }
                                           controller.onTopDots();
                                           controller.onTopLine();
                                           controller.categoryOneList.refresh();
