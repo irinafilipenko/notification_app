@@ -106,14 +106,23 @@ class ItemCategory extends StatelessWidget {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 16),
-                  child: GestureDetector(
-                      onTap: onCheck,
-                      child: SvgPicture.asset(isCheck
-                          ? "assets/icons/checkbox.svg"
-                          : "assets/icons/checkbox_empty.svg")),
-                ),
+                GestureDetector(
+                  onTap: onCheck,
+                  child: Container(
+                    height: 56,
+                    child: Center(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: onCheck,
+                          child: SvgPicture.asset(isCheck
+                              ? "assets/icons/checkbox.svg"
+                              : "assets/icons/checkbox_empty.svg"),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

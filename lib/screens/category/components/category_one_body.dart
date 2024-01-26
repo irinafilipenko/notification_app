@@ -81,6 +81,7 @@ class CategoryOneBody extends GetView<CategoryTwoController> {
                               controller.categoryList.refresh();
                             },
                             onCheck: () {
+                              print("Hello");
                               controller.categoryList[index].isCheck =
                                   !controller.categoryList[index].isCheck;
                               controller.categoryList.refresh();
