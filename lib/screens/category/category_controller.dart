@@ -10,8 +10,8 @@ class CategoryTwoController extends GetxController {
   RxBool isSportOpen = false.obs;
   RxBool isSameVeryOpen = false.obs;
   RxBool isWorkOpen = false.obs;
-  double topDots = 0;
-  double topLine = 0;
+  RxDouble topDots = 0.0.obs;
+  RxDouble topLine = 0.0.obs;
 
   @override
   void onInit() {
@@ -23,27 +23,27 @@ class CategoryTwoController extends GetxController {
 
   onTopDots() {
     if (isWorkOpen.value && !isSportOpen.value && !isSameVeryOpen.value) {
-      topDots = 140;
+      topDots.value = 140;
     }
     if (isWorkOpen.value && isSportOpen.value && !isSameVeryOpen.value) {
-      topDots = 440;
+      topDots.value = 440;
     }
     if (isWorkOpen.value && isSportOpen.value && isSameVeryOpen.value) {
       print("is");
-      topDots = 555;
+      topDots.value = 551;
     }
   }
 
   onTopLine() {
     if (isWorkOpen.value && !isSportOpen.value && !isSameVeryOpen.value) {
-      topLine = 117;
+      topLine.value = 117;
     }
     if (isWorkOpen.value && isSportOpen.value && !isSameVeryOpen.value) {
-      topLine = 417;
+      topLine.value = 417;
     }
     if (isWorkOpen.value && isSportOpen.value && isSameVeryOpen.value) {
       print("is");
-      topLine = 532;
+      topLine.value = 532;
     }
   }
 

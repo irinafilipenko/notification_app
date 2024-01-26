@@ -361,7 +361,7 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                 return Visibility(
                   visible: controller.isWorkOpen.value,
                   child: Positioned(
-                      top: controller.topLine,
+                      top: controller.topLine.value,
                       left: 27,
                       child: Column(
                         children: [
@@ -375,7 +375,7 @@ class CategoryTwoBody extends GetView<CategoryTwoController> {
                 return Visibility(
                   visible: controller.isWorkOpen.value,
                   child: Positioned(
-                      top: controller.topDots,
+                      top: controller.topDots.value,
                       left: 25,
                       child: Column(
                         children: [
