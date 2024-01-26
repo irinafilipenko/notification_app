@@ -239,7 +239,7 @@ class CategoryTwoController extends GetxController {
         ),
         SubCategory(
           category: "onCategory",
-          title: 'Evening',
+          title: "Evening",
           day: "day",
           middleIcon: "🍕",
           isSelected: false,
