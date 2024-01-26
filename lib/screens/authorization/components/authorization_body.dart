@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:notification_app/components/input_item.dart';
@@ -22,31 +23,40 @@ class AuthorizationBody extends GetView<AuthorizationController> {
                 const SizedBox(
                   height: 72,
                 ),
-                const Text(
-                  "Log In",
-                  style: TextStyle(
-                    fontFamily: 'Roboto',
-                    color: kAppBarColor,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 24,
+                Container(
+                  height: 32,
+                  child: const Text(
+                    "Log In",
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      color: kAppBarColor,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 24,
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                Text("Enter current time in hh : mm format",
-                    style: kSecondaryTextStyle),
+                Container(
+                  height: 24,
+                  child: Text("Enter current time in hh : mm format",
+                      style: kSecondaryTextStyle),
+                ),
                 const SizedBox(
                   height: 42,
                 ),
                 Obx(() {
-                  return Text(
-                    controller.timeString.value,
-                    style: const TextStyle(
-                      fontFamily: 'Roboto',
-                      color: kAppBarColor,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 32,
+                  return Container(
+                    height: 48,
+                    child: Text(
+                      controller.timeString.value,
+                      style: const TextStyle(
+                        fontFamily: 'Roboto',
+                        color: kAppBarColor,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 32,
+                      ),
                     ),
                   );
                 }),
@@ -90,7 +100,7 @@ class AuthorizationBody extends GetView<AuthorizationController> {
                         "The time is wrong. Try again.",
                         style: TextStyle(
                             fontFamily: "Roboto",
-                            fontSize: 20,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                             color: Color(0xFFF43528)),
                       ),
@@ -118,8 +128,8 @@ class AuthorizationBody extends GetView<AuthorizationController> {
               ),
             );
           }),
-          const SizedBox(
-            height: 10,
+          SizedBox(
+            height: Platform.isAndroid ? 34 : 10,
           )
         ],
       ),

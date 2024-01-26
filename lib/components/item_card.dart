@@ -70,19 +70,23 @@ class ItemCard extends StatelessWidget {
                       ),
                 time == "" || time == null
                     ? const SizedBox()
-                    : Row(
-                        children: [
-                          Text("Time:", style: kCardItemDescriptionTextStyle),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Text(time!, style: kCardItemTitleTextStyle),
-                        ],
+                    : Container(
+                        height: 24,
+                        child: Row(
+                          children: [
+                            Text("Time:", style: kCardItemDescriptionTextStyle),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Text(time!, style: kCardItemTitleTextStyle),
+                          ],
+                        ),
                       ),
                 const SizedBox(
-                  height: 8,
+                  height: 10,
                 ),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Message:", style: kCardItemDescriptionTextStyle),
                     const SizedBox(
@@ -90,7 +94,7 @@ class ItemCard extends StatelessWidget {
                     ),
                     Expanded(
                         child: Text(text,
-                            maxLines: 1,
+                            maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: kCardItemTitleTextStyle))
                   ],

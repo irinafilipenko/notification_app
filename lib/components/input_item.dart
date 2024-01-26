@@ -25,12 +25,10 @@ class InputItem extends StatelessWidget {
           // width: getProportionateScreenWidth(43),
           child: TextFormField(
             controller: controller.fieldOneController,
-            focusNode: controller.fieldOneFocusNode,
             // focusNode: controller.fieldOneFocusNode,
+            focusNode: controller.focusNode,
             style: const TextStyle(
-              color: Color(
-                0xFF5F5F5F,
-              ),
+              color: kAppBarColor,
               fontWeight: FontWeight.w600,
               fontSize: 16.0,
             ),
@@ -48,9 +46,9 @@ class InputItem extends StatelessWidget {
             ],
             onChanged: (value) {
               controller.nextField(
-                  value: value,
-                  position: 0,
-                  focusNode: controller.fieldOneFocusNode);
+                value: value,
+                position: 0,
+              );
             },
             onEditingComplete: () {
               print("on");
@@ -66,11 +64,9 @@ class InputItem extends StatelessWidget {
           // width: getProportionateScreenWidth(43),
           child: TextFormField(
             controller: controller.fieldTwoController,
-            focusNode: controller.fieldTwoFocusNode,
+            // focusNode: controller.fieldTwoFocusNode,
             style: const TextStyle(
-              color: Color(
-                0xFF5F5F5F,
-              ),
+              color: kAppBarColor,
               fontWeight: FontWeight.w600,
               fontSize: 16.0,
             ),
@@ -86,9 +82,9 @@ class InputItem extends StatelessWidget {
             ],
             onChanged: (value) {
               controller.nextField(
-                  value: value,
-                  position: 1,
-                  focusNode: controller.fieldTwoFocusNode);
+                value: value,
+                position: 1,
+              );
             },
             onEditingComplete: () {
               print("on");
@@ -108,11 +104,9 @@ class InputItem extends StatelessWidget {
           // width: getProportionateScreenWidth(43),
           child: TextFormField(
             controller: controller.fieldThreeController,
-            focusNode: controller.fieldThreeFocusNode,
+            // focusNode: controller.fieldThreeFocusNode,
             style: const TextStyle(
-              color: Color(
-                0xFF5F5F5F,
-              ),
+              color: kAppBarColor,
               fontWeight: FontWeight.w600,
               fontSize: 16.0,
             ),
@@ -128,12 +122,12 @@ class InputItem extends StatelessWidget {
             ],
             onChanged: (value) {
               controller.nextField(
-                  value: value,
-                  position: 2,
-                  focusNode: controller.fieldThreeFocusNode);
+                value: value,
+                position: 2,
+              );
             },
-            onEditingComplete: () {
-              print("on");
+            onTap: () {
+              // controller.onConfirm();
             },
           ),
         ),
@@ -145,11 +139,9 @@ class InputItem extends StatelessWidget {
           width: 44,
           child: TextFormField(
             controller: controller.fieldFourController,
-            focusNode: controller.fieldFourFocusNode,
+            // focusNode: controller.fieldFourFocusNode,
             style: const TextStyle(
-              color: Color(
-                0xFF5F5F5F,
-              ),
+              color: kAppBarColor,
               fontWeight: FontWeight.w600,
               fontSize: 16.0,
             ),
@@ -165,9 +157,9 @@ class InputItem extends StatelessWidget {
             ],
             onChanged: (value) {
               controller.nextField(
-                  value: value,
-                  position: 3,
-                  focusNode: controller.fieldFourFocusNode);
+                value: value,
+                position: 3,
+              );
             },
           ),
         ),

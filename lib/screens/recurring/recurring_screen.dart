@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:notification_app/constants.dart';
 import 'package:notification_app/screens/recurring/components/body_five_minute.dart';
@@ -25,6 +26,16 @@ class RecurringScreen extends GetView<RecurringController> {
           appBar: AppBar(
             backgroundColor: kAppBarColor,
             elevation: 0.0,
+            leading: InkWell(
+              child: SvgPicture.asset(
+                "assets/icons/arrow_back.svg",
+                fit: BoxFit.scaleDown,
+              ),
+              onTap: () {
+                Get.back();
+                // Navigator.of(context).pop();
+              },
+            ),
             title: Obx(() {
               return IndexedStack(
                 index: controller.index.value,
@@ -46,17 +57,24 @@ class RecurringScreen extends GetView<RecurringController> {
             }),
             centerTitle: true,
           ),
-          body: SafeArea(
-            child: Obx(() {
-              return IndexedStack(
-                index: controller.index.value,
-                children: const [
-                  BodyOneMinute(),
-                  BodyThreeMinute(),
-                  BodyFiveMinute(),
-                ],
-              );
-            }),
+          body: Stack(
+            children: [
+              Container(
+                color: Colors.white,
+              ),
+              SafeArea(
+                child: Obx(() {
+                  return IndexedStack(
+                    index: controller.index.value,
+                    children: const [
+                      BodyOneMinute(),
+                      BodyThreeMinute(),
+                      BodyFiveMinute(),
+                    ],
+                  );
+                }),
+              ),
+            ],
           )),
     );
   }

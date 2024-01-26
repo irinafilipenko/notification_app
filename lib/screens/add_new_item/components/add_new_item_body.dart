@@ -55,6 +55,7 @@ class AddNewItemBody extends StatelessWidget {
                     ),
                     !controller.isRepeat.value
                         ? Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 "Type time",

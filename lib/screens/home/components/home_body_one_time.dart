@@ -68,6 +68,7 @@ class HomeBodyOneTime extends GetView<HomeController> {
                           controller.getStorageService.removePastDates());
                 },
                 color: kMainAppColor,
+                height: 48,
                 text: "Add new notification",
                 icon: SvgPicture.asset("assets/icons/add_circle.svg"),
               )

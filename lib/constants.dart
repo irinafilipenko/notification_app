@@ -65,7 +65,7 @@ final kTextInputDecoration = InputDecoration(
   hintText: 'Enter message',
   hintStyle: kSecondaryTextStyle,
 
-  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
   fillColor: Colors.white,
   filled: true,
   enabledBorder: const OutlineInputBorder(

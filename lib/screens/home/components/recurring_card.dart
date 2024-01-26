@@ -24,13 +24,16 @@ class RecuringCard extends StatelessWidget {
           ),
         ),
         child: ListTile(
-          leading: Text(
-            text,
-            style: const TextStyle(
-              fontFamily: 'Roboto',
-              color: kAppBarColor,
-              fontWeight: FontWeight.w700,
-              fontSize: 16,
+          leading: Container(
+            height: 24,
+            child: Text(
+              text,
+              style: const TextStyle(
+                fontFamily: 'Roboto',
+                color: kAppBarColor,
+                fontWeight: FontWeight.w700,
+                fontSize: 16,
+              ),
             ),
           ),
           trailing: SvgPicture.asset("assets/icons/arrow_icon.svg"),

@@ -1,3 +1,4 @@
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:notification_app/screens/category/category_controller.dart';
@@ -16,6 +17,28 @@ class CategoryScreen extends GetView<CategoryTwoController> {
         appBar: AppBar(
           backgroundColor: kAppBarColor,
           elevation: 0.0,
+          leading: InkWell(
+            child: SvgPicture.asset(
+              "assets/icons/arrow_back.svg",
+              fit: BoxFit.scaleDown,
+            ),
+            onTap: () {
+              Get.back();
+              // Navigator.of(context).pop();
+            },
+          ),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.30), // цвет тени
+                  spreadRadius: 0, // радиус распространения
+                  blurRadius: 4, // радиус размытия
+                  offset: Offset(0, 0.5), // смещение тени
+                ),
+              ],
+            ),
+          ),
           title: Obx(() {
             return IndexedStack(
               index: controller.indexScreen.value,

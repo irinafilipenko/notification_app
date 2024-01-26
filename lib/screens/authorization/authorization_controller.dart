@@ -30,6 +30,7 @@ class AuthorizationController extends GetxController
 
   @override
   void onInit() {
+    // focusNode.addListener(() {});
     super.onInit();
     WidgetsBinding.instance.addObserver(this);
     timeString.value = formatDateTime(DateTime.now());
@@ -65,59 +66,31 @@ class AuthorizationController extends GetxController
     return DateFormat('HH:mm').format(dateTime);
   }
 
-  void nextField(
-      {required String value,
-      required int position,
-      required FocusNode focusNode}) {
-    if (!value.contains('\u200b')) {
-      // Здесь выполняется код, если символ \u200b отсутствует в тексте
-      print("Символ \u200b отсутствует");
-    } else {
-      // Здесь выполняется код, если символ \u200b присутствует в тексте
-      print("Символ \u200b присутствует");
-    }
-    if (value.isNotEmpty && position < 3) {
+  void nextField({
+    required String value,
+    required int position,
+  }) {
+    // if (!fieldThreeController.text.contains('\u200b')) {
+    //   // Здесь выполняется код, если символ \u200b отсутствует в тексте
+    //   print("Символ \u200b отсутствует");
+    // } else {
+    //   // Здесь выполняется код, если символ \u200b присутствует в тексте
+    //   print("Символ \u200b присутствует");
+    // }
+    if (value.isNotEmpty &&
+        !fieldThreeController.text.contains('\u200b') &&
+        position < 3) {
       passwordList[position] = value;
       focusNode.nextFocus();
     } else if (value.isEmpty && position > 0) {
-      value = '\u200b';
       // print("previousFocus");
       // Если поле пустое и не является первым полем, переходите к предыдущему полю
-      // passwordList[position] = value;
-      //
+      passwordList[position] = value;
+
       focusNode.previousFocus();
     }
     onConfirm();
   }
-
-  // void clearField(int position) {
-  //   // print(position);
-  //   // Очистка текстового поля по его позиции
-  //   final TextEditingController controller = [
-  //     fieldOneController,
-  //     fieldTwoController,
-  //     fieldThreeController,
-  //     fieldFourController,
-  //   ][position];
-  //   controller.text = '\u200b';
-  //   print(controller.text.contains('\u200b'));
-  //   if (controller.text.contains('\u200b')) {
-  //     if (fieldOneFocusNode.hasFocus) {
-  //       print("fieldOneFocusNode");
-  //       // Фокус находится на fieldOneFocusNode
-  //       // Вы можете выполнить соответствующие действия здесь
-  //     } else if (fieldTwoFocusNode.hasFocus) {
-  //       print("fieldTwoFocusNode");
-  //       fieldOneFocusNode.requestFocus();
-  //     } else if (fieldThreeFocusNode.hasFocus) {
-  //       fieldTwoFocusNode.requestFocus();
-  //       print("fieldThreeFocusNode");
-  //     } else if (fieldFourFocusNode.hasFocus) {
-  //       print("fieldFourFocusNode");
-  //       fieldThreeFocusNode.requestFocus();
-  //     }
-  //   }
-  // }
 
   void onConfirm() {
     if (fieldOneController.text.isNotEmpty &&

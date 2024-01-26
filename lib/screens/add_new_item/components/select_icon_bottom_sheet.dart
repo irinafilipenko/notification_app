@@ -56,7 +56,9 @@ class _SelectIconBottomSheet extends State<SelectIconBottomSheet> {
           const SizedBox(
             height: 8,
           ),
-          const Divider(),
+          const Divider(
+            color: Color(0xFFF3F3F4),
+          ),
           const SizedBox(
             height: 8,
           ),
@@ -102,7 +104,7 @@ class _SelectIconBottomSheet extends State<SelectIconBottomSheet> {
                         color: Color(colorsList[index]),
                         borderRadius: BorderRadius.circular(100),
                         border: Border.all(
-                          color: kSecondaryButtonColor,
+                          color: Color(0xFFE6E6E6),
                           width: 1,
                         ),
                       ),
@@ -156,7 +158,7 @@ class _SelectIconBottomSheet extends State<SelectIconBottomSheet> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
                         border: Border.all(
-                          color: kSecondaryButtonColor,
+                          color: Color(0xFFE6E6E6),
                           width: 1,
                         ),
                       ),
